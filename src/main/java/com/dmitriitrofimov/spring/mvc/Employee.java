@@ -1,5 +1,6 @@
 package com.dmitriitrofimov.spring.mvc;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +12,8 @@ public class Employee {
 	private Map<String, String> departments;
 	private String carBrand;
 	private Map<String, String> carBrands;
+	private String[] languages;
+	private Map<String, String> languageList;
 
 	public Employee() {
 		departments = new HashMap<>();
@@ -22,6 +25,11 @@ public class Employee {
 		carBrands.put("BMW", "BMW");
 		carBrands.put("Audi", "Audi");
 		carBrands.put("Mercedes-Benz", "MB");
+
+		languageList = new HashMap<>();
+		languageList.put("English", "EN");
+		languageList.put("Deutsch", "DE");
+		languageList.put("French", "FR");
 	}
 
 	public Employee(String name, String surname, int salary) {
@@ -86,6 +94,22 @@ public class Employee {
 		this.carBrands = carBrands;
 	}
 
+	public String[] getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(String[] languages) {
+		this.languages = languages;
+	}
+
+	public Map<String, String> getLanguageList() {
+		return languageList;
+	}
+
+	public void setLanguageList(Map<String, String> languageList) {
+		this.languageList = languageList;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee{" +
@@ -94,6 +118,7 @@ public class Employee {
 				", salary = " + salary +
 				", department = '" + department + '\'' +
 				", carBrand = '" + carBrand + '\'' +
+				", languages = " + Arrays.toString(languages) +
 				'}';
 	}
 }
